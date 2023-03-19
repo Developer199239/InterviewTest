@@ -18,7 +18,11 @@ jobs:
           java-version: 11
           distribution: 'adopt'
 
-      - name: Build with Gradle
+     
+      - name: Grant execute permission to gradlew
+        run: chmod +x ./gradlew
+
+      - name: Build project
         run: ./gradlew assembleDebug
 
       - name: Copy APK to artifacts
